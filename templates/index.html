@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegexN</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0c1829; /* Navy blue background */
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1); /* Glass morphism effect */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Thin border */
+            border-radius: 10px;
+            padding: 20px;
+            width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Glass morphism shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 50px;
+            box-shadow: 4px 4px #040b14;
+            
+        }
+
+        .terminal-lights {
+            display: flex;
+            gap: 7px;
+            width: 100%;
+            justify-content: flex-start; /* Align the circles to the left */
+        }
+
+        .terminal-circle {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #FF5F56; /* Red */
+            box-shadow: 0 0 0 1px #FF5F56; /* Border */
+            position: relative;
+        }
+
+        .yellow {
+            background-color: #FFD32A; /* Yellow */
+            box-shadow: 0 0 0 1px #FFD32A; /* Border */
+        }
+
+        .green {
+            background-color: #27AE60; /* Green */
+            box-shadow: 0 0 0 1px #27AE60; /* Border */
+        }
+
+        .form-container {
+            margin-top: 20px;
+            width: 100%;
+            
+        }
+
+        .form-container:first-child {
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #d4d4d4; /* Light gray */
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 40px); /* Subtract padding from width */
+            padding: 8px;
+            border: 0.3px solid #3a536b; /* Dark blue */
+            border-radius: 5px;
+            background-color: #14263f; /* Dark blue background */
+            color: #d4d4d4; /* Light gray text */
+            margin-bottom: 10px;
+            box-shadow: 4px 4px #040b14;
+        }
+       
+        button[type="submit"] {
+            --font-color: #fefefe;
+            --bg-color: #0c1829;
+            --main-color: #040b14;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 2px solid #3a536b;
+            background-color: var(--bg-color);
+            box-shadow: 4px 4px var(--main-color);
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--font-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #14263f; /* Green */
+            color: #d4d4d4; /* White text */
+            box-shadow: none;
+            transform: translateY(1px);
+        }
+        
+        hr {
+            width: 100%;
+            border: 0;
+            height: 1px;
+            background-color: #444; /* Dark gray */
+            margin: 20px 0;
+        }
+        
+        .heading {
+            position: absolute;
+            top: -3%;
+            right: 2%;
+        }
+        .h2 p{
+            color: #d4d4d4;
+            font-size: x-large;
+            font-weight: 600;
+            padding: 0;
+            margin-bottom: 0;
+            margin-top:0 ;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+        
+            input[type="text"],
+            textarea {
+                width: calc(100% - 20px); 
+            }
+        }
+        
+        @media screen and (max-width: 380px) {
+      
+            .container {
+                width: 85%;
+            }
+        
+            input[type="text"],
+            textarea {
+                width: calc(100% - 10px); 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-lights">
+            <div class="terminal-circle"></div>
+            <div class="line"></div>
+            <div class="terminal-circle yellow"></div>
+            <div class="line"></div>
+            <div class="terminal-circle green"></div>
+            <h1 style="color: #d4d4d4;" class="heading">RegexN</h1>
+        </div>
+        <hr/>
+        <form action="/results" method="POST" class="form-container">
+            <div>
+                <label for="regex_pattern">Regular Expression:</label>
+                <input type="text" id="regex_pattern" name="regex_pattern">
+            </div>
+            <div>
+                <label for="testing_text">Testing Text:</label>
+                <textarea id="testing_text" name="testing_text" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit" class="button">Check</button>
+        </form>
+        <hr/>
+       <div class="h2"><p>Email Validation</p></div>
+        <form action="/validateEmail" method="POST" class="form-container">
+            <div>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <button type="submit" class="button">Validate Email</button>
+        </form>
+    </div>
+</body>
+</html>

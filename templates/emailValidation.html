@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegexN Email Validation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0c1829; /* Navy blue background */
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1); /* Glass morphism effect */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Thin border */
+            border-radius: 10px;
+            padding: 20px;
+            width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Glass morphism shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 50px;
+            box-shadow: 4px 4px #040b14;
+        }
+
+        h1 {
+            color: #d4d4d4;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .valid {
+            color: green;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight:600;
+        }
+
+        .invalid {
+            color: red;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Validation</h1>
+        {% if valid %}
+            <p class="valid">Email: <span style="color: #fefefe">{{ email }}</span> is valid!</p>
+        {% else %}
+            <p class="invalid">Email: <span style="color: #fefefe">{{ email }}</span> is invalid!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

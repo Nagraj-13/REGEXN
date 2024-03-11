@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegexN Results</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0c1829; /* Navy blue background */
+            font-family: 'Courier New', Courier, monospace;
+            color: #d4d4d4; /* Light gray text */
+        }
+
+        .container {
+            width: 600px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Glass morphism shadow */
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1); /* Glass morphism effect */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Thin border */
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 0.3px solid #3a536b; /* Dark blue */
+            border-radius: 5px;
+            background-color: #14263f; /* Dark blue background */
+            color: #d4d4d4; /* Light gray text */
+            margin-bottom: 10px;
+            box-shadow: 4px 4px #040b14;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-color: #bababa; /* Green */
+            box-shadow: 4px 4px #1abc9c;
+        }
+
+        .textarea::placeholder {
+            color: #6c8193; /* Lighter blue */
+        }
+        .textbox{
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 0.3px solid #3a536b; /* Dark blue */
+            border-radius: 5px;
+            background-color: #14263f; /* Dark blue background */
+            color: #d4d4d4; /* Light gray text */
+            margin-bottom: 10px;
+            box-shadow: 4px 4px #040b14;
+            resize: vertical;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        <div>
+            <h2>Highlighted Text</h2>
+            <div class="textarea">{{ highlightedText|safe }}</div>
+        </div>
+        <div>
+            
+                <h2>Matching Text</h2>
+                <div class="textarea">
+                    <ul>
+                        {% for match in matches %}
+                        <li>{{ match }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
